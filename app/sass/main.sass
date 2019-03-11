@@ -2,6 +2,7 @@
 @import "fonts"
 @import "libs"
 
+
 ::placeholder
 	color: #666
 
@@ -12,6 +13,7 @@
 body
 	font-size: 16px
 	min-width: 320px
+	background: url('/img/background10.png')
 	position: relative
 	line-height: 1.65
 	font-family: $default-font
@@ -38,6 +40,99 @@ body
 b, strong
 	font-weight: bold
 
+.button-wa:link, .button-call:link, .button-price:link, .button-wa:active, .button-call:active, .button-price:active, .button-wa:visited, .button-call:visited, .button-price:visited
+	color: #fff
+	text-decoration: none
+
+.back-button:link, .back-button:visited, .back-button:active
+	color: #232323
+	text-decoration: none
+
+.logo
+	margin-top: 40px
+
+.buttons, .price-body
+	margin-top: 70px
+
+.button-wa,.button-call, .button-price, .back-button
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	align-content: center
+	justify-content: center
+	align-items: center
+	width: 100%
+	height: 50px
+	color: #fff
+	margin-top: 15px
+	border-radius: 200px
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1)
+	> .fa-whatsapp
+		margin-right: 5px
+		font-size: 24px
+	:active
+		color: #fff
+		margin-top: 1px
+		box-shadow: 0 0 0 #fff
+
+.button-call
+	background: rgb(37,119,211)
+	background: linear-gradient(0deg, rgba(0,138,7,1) 0%, rgba(0,200,7,1) 100%)
+	> .fa-phone
+		margin-right: 5px
+
+.button-price
+		background: rgb(210,24,21)
+		background: linear-gradient(0deg, rgba(210,24,21,1) 0%, rgba(249,69,37,1) 100%)
+		> .fa-list-ul
+			margin-right: 5px
+
+.button-wa
+	background: rgb(37,211,102)
+	background: linear-gradient(0deg, rgba(37,211,102,1) 0%, rgba(50,230,117,1) 100%)
+
+.back-button
+	margin-bottom: 25px
+	background: #eee
+	&-img
+		width: 20px
+		height: auto
+		margin-right: 7px
+
+.button-price-item
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	justify-content: center
+	align-content: center
+	align-items: center
+	margin-left: -7px
+	margin-right: -7px
+	margin-bottom: 15px
+	> p
+		position: absolute
+		color: #fff
+		z-index: 2
+		font-weight: 700
+		font-size: 18px
+		letter-spacing: 1px
+
+.button-price-img
+	> img
+		border-radius: 15px
+
+.darken
+	position: relative
+	&::before
+		content: ""
+		bottom: 0
+		right: 0
+		top: 0
+		left: 0
+		border-radius: 15px
+		position: absolute
+		z-index: 1
+		background: rgba(0,0,0,0.4)
 
 
 @import "media" // Always at the end
