@@ -5,12 +5,17 @@ $(function() {
   	// Custom JS
 });
 $(function() {
-$('#close').on('click', function() {
-  $('.filter-wrap').hide();
+$('.close').on('click', function() {
+  $(this).parent().hide();
 });
 
-$('.filter-button').on('click', function(e) {
+$('#filter-open').on('click', function(e) {
   e.preventDefault();
-  $('.filter-wrap').show();
+  $('#modal-filter').show();
+});
+
+$('.add-button').on('click', function(e) {
+  e.preventDefault();
+  $('#modal-add').show();
 });
 });

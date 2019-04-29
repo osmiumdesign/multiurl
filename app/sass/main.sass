@@ -21,7 +21,7 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	color: $text
-	padding-bottom: 65px
+	padding-bottom: 75px
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -62,7 +62,7 @@ h1
 .buttons, .price-body
 	margin-top: 30px
 
-.button-wa,.button-interiors,.button-call, .button-price, .back-button, .filter-button
+.button-wa,.button-interiors,.button-call, .button-price, .back-button,.add-button, .filter-button
 	display: -webkit-flex
 	display: -ms-flex
 	display: flex
@@ -98,7 +98,7 @@ h1
 	background: rgb(37,211,102)
 	background: linear-gradient(0deg, rgba(37,211,102,1) 0%, rgba(50,230,117,1) 100%)
 
-.back-filter-buttons
+.back-filter-buttons, .back-filter-buttons-admin
 	position: fixed
 	display: -webkit-flex
 	display: -ms-flex
@@ -110,6 +110,9 @@ h1
 	right: 50%
 	z-index: 5
 	margin-right: -110px
+
+.back-filter-buttons-admin
+	margin-right: -145px
 
 .button-interiors
 	position: relative
@@ -142,7 +145,7 @@ h1
 		letter-spacing: 1px
 
 
-.back-button, .filter-button
+.back-button, .filter-button, .add-button
 	height: 60px
 	width: 60px
 	background: #e34b3d
@@ -161,9 +164,13 @@ h1
 	background: #3366cc
 	width: 150px
 	margin-left: 10px
+	margin-right: 10px
 	font-size: 18px
 	&-img
 		margin-right: 7px
+
+.add-button
+	background: #abcb56
 
 .table-responsive
 	margin-top: 25px
@@ -217,20 +224,20 @@ h1
 .center
 	margin-left: -220px !important
 
-.filter-wrap
-	background: #dedede
-	padding: 30px
-	border-radius: 15px
-	position: fixed
-	width: 80vw
-	bottom: 90px
-	left: 50%
-	margin-left: -40vw
-	box-shadow: 0 5px 15px rgba(0,0,0,.2)
-	overflow: auto
-	display: none
+// .filter-wrap
+// 	background: #fafafa
+// 	padding: 30px
+// 	border-radius: 15px
+// 	position: fixed
+// 	width: 80vw
+// 	bottom: 90px
+// 	left: 50%
+// 	margin-left: -40vw
+// 	box-shadow: 0 5px 15px rgba(0,0,0,.2)
+// 	overflow: auto
+// 	display: none
 
-#close
+.close
 	position: absolute
 	right: 20px
 	top: 20px
@@ -288,6 +295,11 @@ h1
 
 .table input
 	width: 50px
+	border: 1px solid rgba(0,0,0,0.1)
+	padding-left: 5px
+
+.table tr
+	position: relative
 
 .selection
 	margin-top: 10px
@@ -295,10 +307,99 @@ h1
 		display: inline-block
 		background: #eee
 		border-radius: 5px
-		width: 120px
-		height: 120px
+		width: 72px
+		height: 72px
 		margin-right: 15px
 		margin-bottom: 45px
 		text-align: center
+
+.del-button
+	background: #e34b3d
+	border: none
+	width: 26px
+	height: 26px
+
+	border-radius: 50%
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	align-items: center
+	justify-content: center
+	align-content: center
+	&-img
+		width: 24px
+		height: 24px
+		justify-content: center
+		align-items: center
+		align-content: center
+
+#modal, #modal-add, #modal-filter
+	position: fixed
+	z-index: 10
+	bottom: 90px
+	left: 5%
+	display: none
+
+#bgdrks
+	z-index: 4
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	background: rgba(0,0,0,0.2)
+	display: none
+
+.add-admin
+	width: 90vw
+	background: #fafafa
+	margin: 0 auto
+	box-shadow: 0 5px 15px rgba(0,0,0,.2)
+	border-radius: 15px
+	
+
+.head-modal
+	background: #232323
+	color: #fff
+	border-radius: 15px 15px 0 0
+	padding: 20px 20px 10px 20px
+	margin-bottom: 10px
+
+.body-modal
+	padding: 20px
+	background: #fafafa
+	border-radius: 15px
+	select
+		display: block
+		width: 100%
+		appearance: none !important
+		height: 40px
+		padding-left: 15px
+		border-radius: 10px
+		background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 8 8'%3E%3Cpath fill='%23000' fill-rule='evenodd' class='cls-1' d='M4,5.9c-0.1,0-0.2,0-0.3-0.1l-3-3c-0.2-0.2-0.2-0.4,0-0.6s0.4-0.2,0.6,0L4,4.9l2.7-2.7C6.8,2,7.1,2,7.3,2.2 c0.2,0.2,0.2,0.4,0,0.6l-3,3C4.2,5.9,4.1,5.9,4,5.9z'/%3E%3C/svg%3E%0A") no-repeat 95% 50% #fff
+		outline: 0
+		vertical-align: top
+		border: none
+		box-shadow: 0 2px 5px rgba(0,0,0,.2)
+	input
+		width: 100%
+		height: 40px
+		padding-left: 20px
+		border: none
+		box-shadow: 0 2px 5px rgba(0,0,0,.2)
+		border-radius: 10px
+
+.caption
+	font-size: 12px
+	color: rgba(0,0,0,0.7)
+	margin-bottom: 5px
+
+.save-form
+	background: none
+	color: #000000
+	border: none
+	width: 100%
+	height: 35px
+	font-weight: bold
 
 @import "media" // Always at the end
