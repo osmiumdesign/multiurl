@@ -154,7 +154,7 @@
 					class=""></path>
 			</svg>
 		</a>
-		<a href="/" class="filter-button" id="filter-open">
+		<a href="/" class="filter-button">
 			<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-left" role="img"
 				xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="filter-button-img">
 				<path fill="white"
@@ -198,26 +198,39 @@
 				<p class="caption">
 					Выберите, что хотите добавить
 				</p>
-				<p><select name="" id="">
+				<p><select name="" id="selectOption" onChange="dataChange()">
 						<option value="additem">Добавить тираж</option>
 						<option value="addpaper">Добавить бумагу (модификатор)</option>
 					</select>
 				</p>
-				<p class="caption">
-					Введите данные
-				</p>
-				<p>
-					<input type="text" placeholder="Тираж">
-				</p>
-				<p>
-					<input type="text" placeholder="4+0">
-				</p>
-				<p>
-					<input type="text" placeholder="4+4">
-				</p>
-
+				<div id="modal-dataInput"></div>
+				<div id="additem">
+					<p class="caption">
+						Введите данные
+					</p>
+					<p>
+						<input type="text" placeholder="Тираж">
+					</p>
+					<p>
+						<input type="text" placeholder="Цена (4+0)">
+					</p>
+					<p>
+						<input type="text" placeholder="Цена (4+4)">
+					</p>
+				</div>
+				<div id="addpaper">
+					<p class="caption">
+						Введите данные
+					</p>
+					<p>
+						<input type="text" placeholder="Название модификатора">
+					</p>
+					<p>
+						<input type="text" placeholder="Надбавка к цене">
+					</p>
+				</div>
 				<button class="save-form">
-						<i class="fas fa-check"></i>
+					<i class="fas fa-check"></i>
 					Добавить
 				</button>
 			</form>
@@ -226,46 +239,46 @@
 	</div>
 	<div id="bgdrks"></div>
 
-<!--  -->
+	<!--  -->
 	<div id="modal-filter" class="add-admin">
-			<div class="close">
-				<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-left" role="img"
-					xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="filter-button-img">
-					<path fill="white"
-						d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 464c-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216zm94.8-285.3L281.5 256l69.3 69.3c4.7 4.7 4.7 12.3 0 17l-8.5 8.5c-4.7 4.7-12.3 4.7-17 0L256 281.5l-69.3 69.3c-4.7 4.7-12.3 4.7-17 0l-8.5-8.5c-4.7-4.7-4.7-12.3 0-17l69.3-69.3-69.3-69.3c-4.7-4.7-4.7-12.3 0-17l8.5-8.5c4.7-4.7 12.3-4.7 17 0l69.3 69.3 69.3-69.3c4.7-4.7 12.3-4.7 17 0l8.5 8.5c4.6 4.7 4.6 12.3 0 17z"
-						class=""></path>
-				</svg>
-	
-			</div>
-			<div class="head-modal">
-				<h3>Выберите бумагу</h3>
-	
-			</div>
-	
-			<div class="body-modal">
-	
-				<form action="">
-						<div class="filter-radio">
-								<input type="radio" class="radio" id="1" name="paper" />
-								<label for="1">Маджестик</label>
-							</div>
-							<div class="filter-radio">
-								<input type="radio" class="radio" id="2" name="paper" />
-								<label for="2">Лен</label>
-							</div>
-							<div class="filter-radio">
-								<input type="radio" class="radio" id="3" name="paper" />
-								<label for="3">Touch Cover</label>
-							</div>
-							<div class="filter-radio">
-								<input type="radio" class="radio" id="4" name="paper" />
-								<label for="4">Фольгирование</label>
-							</div>
-				</form>
-	
-			</div>
+		<div class="close">
+			<svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="arrow-left" role="img"
+				xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="filter-button-img">
+				<path fill="white"
+					d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 464c-118.7 0-216-96.1-216-216 0-118.7 96.1-216 216-216 118.7 0 216 96.1 216 216 0 118.7-96.1 216-216 216zm94.8-285.3L281.5 256l69.3 69.3c4.7 4.7 4.7 12.3 0 17l-8.5 8.5c-4.7 4.7-12.3 4.7-17 0L256 281.5l-69.3 69.3c-4.7 4.7-12.3 4.7-17 0l-8.5-8.5c-4.7-4.7-4.7-12.3 0-17l69.3-69.3-69.3-69.3c-4.7-4.7-4.7-12.3 0-17l8.5-8.5c4.7-4.7 12.3-4.7 17 0l69.3 69.3 69.3-69.3c4.7-4.7 12.3-4.7 17 0l8.5 8.5c4.6 4.7 4.6 12.3 0 17z"
+					class=""></path>
+			</svg>
+
 		</div>
-		<div id="bgdrks"></div>
+		<div class="head-modal">
+			<h3>Выберите бумагу</h3>
+
+		</div>
+
+		<div class="body-modal">
+
+			<form action="">
+				<div class="filter-radio">
+					<input type="radio" class="radio" id="1" name="paper" />
+					<label for="1">Маджестик</label>
+				</div>
+				<div class="filter-radio">
+					<input type="radio" class="radio" id="2" name="paper" />
+					<label for="2">Лен</label>
+				</div>
+				<div class="filter-radio">
+					<input type="radio" class="radio" id="3" name="paper" />
+					<label for="3">Touch Cover</label>
+				</div>
+				<div class="filter-radio">
+					<input type="radio" class="radio" id="4" name="paper" />
+					<label for="4">Фольгирование</label>
+				</div>
+			</form>
+
+		</div>
+	</div>
+	<div id="bgdrks"></div>
 
 </body>
 
